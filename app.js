@@ -10,7 +10,7 @@ studentLogin.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('course', {
       url: "course/:courseId",
       templateUrl: "partials/course.html",
-      controller: "CoursesController"
+      controller: "StudentsController"
     });
 
     $stateProvider.state('sign-in', {

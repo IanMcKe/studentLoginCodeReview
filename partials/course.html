@@ -1,4 +1,29 @@
 <div class="jumbotron">
-  <button ui-sref="sign-in" class="btn btn-default btn-lg">Sign-In</button>
-  <button ui-sref="signed-in" class="btn btn-default btn-lg">Who's Here</button>
+  <h1>{{course.name}}</h1>
+  <button class="btn btn-default btn-lg">All Students</button>
+  <button class="btn btn-default btn-lg">Who's Here</button>
+  <hr>
+  <div class="row">
+    <div ng-repeat="item in course.students" class="col-sm-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          {{item.name}}
+        </div>
+        <div class="panel-body">
+          <button type="submit" class="btn btn-default">Sign-In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <form ng-submit="addStudent()" class="form-inline" role="form">
+    <div class="form-group">
+      <div class="input-group">
+        <input ng-model="studentName" type="text" class="form-control" placeholder="Add Student">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </span>
+      </div>
+    </div>
+  </form>
 </div>
