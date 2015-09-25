@@ -1,3 +1,20 @@
 <div class="jumbotron">
-  <h1>Welcome to the Epicenter</h1>
+  <h1>Epicodus Sign-In</h1>
+  <p>Select your course:</p>
+  <form ng-repeat="item in courses">
+    <div class="form-group">
+      <button type="submit" class="btn btn-default" ui-sref="course({ courseId: item.id })">{{item.name}}</button>
+    </div>
+  </form>
+  <hr>
+  <form ng-submit=CoursesFactory.addCourse() class="form-inline" role="form">
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" ng-model="CoursesFactory.courseName" placeholder="Add Course">
+      <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">Submit</button>
+      </span>
+      </div>
+    </div>
+  </form>
 </div>
