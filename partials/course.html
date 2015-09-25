@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="well">
   <h1>{{course.name}}</h1>
   <button class="btn btn-default btn-lg">All Students</button>
   <button class="btn btn-default btn-lg">Who's Here</button>
@@ -11,7 +11,10 @@
           {{item.name[1]}}
         </div>
         <div class="panel-body">
-          <button type="submit" class="btn btn-default">Sign-In</button>
+          <p ng-show="item.attendance"><i class="fa fa-check"></i> Signed In</p>
+          <p ng-hide="item.attendance">Not Signed In</p>
+          <button ng-show="item.attendance" ng-click="item.attendance = false" type="submit" class="btn btn-default">I'm Leaving</button>
+          <button ng-hide="item.attendance" ng-click="item.attendance = true" type="submit" class="btn btn-default">Sign-In</button>
         </div>
       </div>
     </div>
