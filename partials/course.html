@@ -1,7 +1,7 @@
 <div ng-init="filtered = course.students" class="well">
   <h1>{{course.name}}</h1>
   <button ng-click="filtered = course.students" class="btn btn-default btn-lg">All Students</button>
-  <button ng-click="filtered = (course.students | filter: {attendance: true} : false)" class="btn btn-default btn-lg">Who's Here</button>
+  <button ng-click="filtered = (course.students | filter: {attendance: 'here'} : false)" class="btn btn-default btn-lg">Who's Here</button>
   <hr>
   <div class="row">
     <div ng-repeat="item in filtered | orderBy: 'name[0]'" class="col-md-2">
