@@ -2,9 +2,6 @@
 ##### A website that allows students to sign in to class for the day, and allows teachers to see who's signed in. (9/25/15)
 
 #### By Ian McKenney
-## Description
-
-Built using MVC.
 
 ## Setup
 
@@ -23,6 +20,11 @@ python -m http.server 8000
 ## Technologies Used
 
 HTML, CSS, Bootstrap, JavaScript, AngularJS
+
+## Feature Ideas
+
+* Display the time that the "I'm leaving" button was pressed under the "Signed Out" message
+* Add the option to pair with another student in addition to signing in
 
 ### Legal
 

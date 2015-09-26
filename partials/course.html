@@ -11,10 +11,11 @@
           {{item.name[1]}}
         </div>
         <div class="panel-body">
-          <p ng-show="item.attendance"><i class="fa fa-check"></i> Signed In</p>
-          <p ng-hide="item.attendance">Not Signed In</p>
-          <button ng-show="item.attendance" ng-click="item.attendance = false" type="submit" class="btn btn-default">I'm Leaving</button>
-          <button ng-hide="item.attendance" ng-click="item.attendance = true" type="submit" class="btn btn-default">Sign-In</button>
+          <p ng-if="item.attendance == 'here'"><i class="fa fa-check"></i> Signed In</p>
+          <p ng-if="item.attendance == 'left'">Signed Out</p>
+          <p ng-if="(item.attendance != 'here') && (item.attendance != 'left')">Not Signed In</p>
+          <button ng-if="item.attendance == false" ng-click="item.attendance = 'here'" type="submit" class="btn btn-default">Sign-In</button>
+          <button ng-if="item.attendance == 'here'" ng-click="item.attendance = 'left'" type="submit" class="btn btn-default">I'm Leaving</button>
         </div>
       </div>
     </div>
